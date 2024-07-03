@@ -15,3 +15,20 @@ document.querySelectorAll('.accordion-link').forEach(link => {
         });
     });
 });
+
+
+function setActiveNav() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const currentURL = window.location.href;
+
+    navLinks.forEach(link => {
+        if (link.href === currentURL) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+// Call the function on page load
+window.onload = setActiveNav;
